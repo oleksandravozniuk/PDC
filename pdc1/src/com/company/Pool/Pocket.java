@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Pool;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;

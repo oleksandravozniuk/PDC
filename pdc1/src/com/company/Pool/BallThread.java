@@ -1,6 +1,5 @@
-package com.company;
+package com.company.Pool;
 
-import java.awt.*;
 
 public class BallThread extends Thread {
     private final Ball b;

@@ -1,11 +1,11 @@
-package com.company;
+package com.company.Pool;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
 public class BounceFrame extends JFrame {
-    private BallCanvas ballCanvas;
+    private static BallCanvas ballCanvas;
 
     public static final int WIDTH = 450;
     public static final int HEIGHT = 350;
@@ -72,7 +72,7 @@ public class BounceFrame extends JFrame {
             thread.start();
             System.out.println("Red Thread created = " +
                     thread.getName());
-            for(int i = 0; i<500; i++){
+            for(int i = 0; i<50; i++){
                 Ball b2 = new Ball(ballCanvas, Color.blue, 50, 50);
                 ballCanvas.addBall(b2);
                 BallThread thread2 = new BallThread(b2);
@@ -118,8 +118,33 @@ public class BounceFrame extends JFrame {
         content.add(buttonPanel, BorderLayout.SOUTH);
     }
 
-    private int getRandomCoordinate(){
+    private static int getRandomCoordinate(){
         int coordinate = new Random().nextInt(ballCanvas.getWidth());
         return coordinate;
+    }
+
+    public static void join(){
+        Ball g = new Ball(ballCanvas, Color.darkGray, getRandomCoordinate(), getRandomCoordinate());
+        ballCanvas.addBall(g);
+        BallThread threadG = new BallThread(g);
+
+        Ball b = new Ball(ballCanvas, Color.blue, getRandomCoordinate(), getRandomCoordinate());
+        ballCanvas.addBall(b);
+        BallThread threadB = new BallThread(b);
+
+        Ball r = new Ball(ballCanvas, Color.red, getRandomCoordinate(), getRandomCoordinate());
+        ballCanvas.addBall(r);
+        BallThread threadR = new BallThread(r);
+
+        threadG.start();
+        threadB.start();
+
+        try {
+            threadG.join();
+        } catch (InterruptedException interruptedException) {
+            interruptedException.printStackTrace();
+        }
+
+        threadR.start();
     }
 }
