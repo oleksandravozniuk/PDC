@@ -21,7 +21,7 @@ public class Bounce {
 //
 //        BounceFrame.join();
 
-////task5.1
+//task5.1
 //        for(int i = 0; i<100;i++)
 //        {
 //            try{
@@ -29,8 +29,8 @@ public class Bounce {
 //                System.out.print("\n");
 //            }catch (InterruptedException ex){ }
 //        }
-//
-//
+
+
 ////task 5.2
 //        task2();
 
@@ -50,22 +50,19 @@ public class Bounce {
     }
 
     private static void task2(){
-        SymbolWriter symbolWriter = new SymbolWriter();
-
-        SymbolThreadDash st1 = new SymbolThreadDash(symbolWriter);
-        SymbolThreadVertical st2 = new SymbolThreadVertical(symbolWriter);
-        st1.start();
-        st2.start();
+//        SymbolWriter symbolWriter = new SymbolWriter();
+//
+//        SymbolThreadDash st1 = new SymbolThreadDash(symbolWriter);
+//        SymbolThreadVertical st2 = new SymbolThreadVertical(symbolWriter);
+//        st1.start();
+//        st2.start();
     }
 
     private static void task3(){
-        Counter counter = new Counter(0,1);
+        Counter counter = new Counter(0,3);
         IncrementThread it = new IncrementThread(counter);
         DecrementThread dt = new DecrementThread(counter);
         it.start();
         dt.start();
-
-
-
     }
 }

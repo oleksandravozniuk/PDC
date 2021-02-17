@@ -15,7 +15,7 @@ public class BounceFrame extends JFrame {
         this.setTitle("Bounce program");
 
         var label = new JLabel("0");
-        this.ballCanvas = new BallCanvas(label);
+        ballCanvas = new BallCanvas(label);
 
         Pocket pocket = new Pocket(ballCanvas);
         ballCanvas.addPocket(pocket);
@@ -24,7 +24,7 @@ public class BounceFrame extends JFrame {
                 + Thread.currentThread().getName());
 
         Container content = this.getContentPane();
-        content.add(this.ballCanvas, BorderLayout.CENTER);
+        content.add(ballCanvas, BorderLayout.CENTER);
         JPanel buttonPanel = new JPanel();
         buttonPanel.setBackground(Color.lightGray);
 
