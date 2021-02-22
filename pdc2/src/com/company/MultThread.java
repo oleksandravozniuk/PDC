@@ -1,23 +1,26 @@
 package com.company;
 
-public class MultThread extends Thread {
-    int[] line;
-    int[] column;
-    int sum = 0;
+import java.util.Arrays;
 
-    public MultThread(int[] line, int[] column){
-        this.line = line;
-        this.column = column;
+public class MultThread extends Thread {
+    private Result result;
+    private RowOrColumn[] rows;
+    private RowOrColumn[] columns;
+    private int iteration;
+
+    public MultThread(RowOrColumn[] rows, RowOrColumn[] columns, Result result, int iteration){
+        this.rows = rows;
+        this.columns = columns;
+        this.result = result;
+        this.iteration = iteration;
     }
     @Override
     public void run(){
-        for(int i = 0; i < line.length; i++){
-            sum+=line[i]*column[i];
+        for(int i = 0;i<rows.length;i++){
+                result.multiply(rows[i].indexInMatrix, rows[i].arrElements, columns[i].indexInMatrix, columns[i].arrElements, iteration);
         }
+        result.iterations[iteration]++;
     }
 
-    public int getValue() {
-        return sum;
-    }
 
 }
