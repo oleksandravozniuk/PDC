@@ -1,4 +1,4 @@
-package com.company;
+package Striped;
 
 public class RowOrColumn {
     int[] arrElements;

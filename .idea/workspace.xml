@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf871c5a-98ae-4d21-b086-7f7f2c1f6142" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pdc2/pdc2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdc2/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc2/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdc2/src/com/company/MultThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc2/src/com/company/MultThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdc2/src/com/company/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc2/src/com/company/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdc2/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc2/out/production/pdc2/com/company/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc2/out/production/pdc2/com/company/MultThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc2/out/production/pdc2/com/company/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc2/out/production/pdc2/com/company/RowOrColumn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc2/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc2/src/Striped/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc2/src/com/company/MultThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc2/src/Striped/MultThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc2/src/com/company/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc2/src/Striped/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc2/src/com/company/RowOrColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc2/src/Striped/RowOrColumn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Вознюк_О_ІС_71_лаб2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Вознюк_О_ІС_71_лаб2.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

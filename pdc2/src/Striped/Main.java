@@ -1,7 +1,5 @@
-package com.company;
+package Striped;
 
-import java.util.Arrays;
-import java.util.Timer;
 
 public class Main {
 
@@ -9,7 +7,7 @@ public class Main {
         int value = 0;
         //input values
 
-            int size = 400;
+            int size = 1000;
             int threadsCount = 50;
             int[][] a = createMatrix(size);
             int[][] b = createMatrix2(size);
@@ -19,9 +17,10 @@ public class Main {
             Result result = new Result(size);
             long m = System.currentTimeMillis();
             multiplyMatrixes(a,b,size,threadsCount,result);
-            //value+=(double) (System.currentTimeMillis() - m);
+            //multiplyMatrixesSerial(a,b,result);
+            //printMatrix(result.resultMatrix,size);
 
-        System.out.println((double) (System.currentTimeMillis() - m));
+        System.out.println((double) (System.currentTimeMillis() - m)/1000);
     }
 
     private static int[][] createMatrix(int size){
@@ -59,7 +58,7 @@ public class Main {
         int stripeWidth = size/threadsCount;
         int startIndex = 0;
         for(int i=0;i<size;i++){
-            runIteration(matrixA,matrixB,threadsCount,stripeWidth,startIndex,result,i,size);
+            runIteration(matrixA,matrixB,stripeWidth,startIndex,result,i,size);
             if(startIndex==0) {
                 startIndex = size - 1;
             }else{
@@ -68,7 +67,7 @@ public class Main {
         }
     }
 
-    private static void runIteration(int[][] matrixA, int[][] matrixB, int threadsCount, int stripeWidth, int startIndex, Result result, int iteration, int size) throws InterruptedException {
+    private static void runIteration(int[][] matrixA, int[][] matrixB, int stripeWidth, int startIndex, Result result, int iteration, int size) {
 //        System.out.println("s width:" + stripeWidth);
 
         for(int i = 0; i<size;i++){
@@ -101,5 +100,21 @@ public class Main {
             }
         }
         return column;
+    }
+
+    private static void multiplyMatrixesSerial(int[][] matrixA, int[][] matrixB, Result result){
+        for(int i = 0; i<matrixA[0].length;i++){
+            for(int j=0;j<matrixA[0].length;j++){
+                result.resultMatrix[i][j] = multiplyRowOnColumn(matrixA[i],getColumn(matrixB,j));
+            }
+        }
+    }
+
+    private static int multiplyRowOnColumn(int[] row, int[] column){
+        int sum = 0;
+        for(int i=0;i<row.length;i++){
+            sum+=row[i]*column[i];
+        }
+        return sum;
     }
 }

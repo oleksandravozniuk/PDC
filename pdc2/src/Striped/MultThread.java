@@ -1,6 +1,4 @@
-package com.company;
-
-import java.util.Arrays;
+package Striped;
 
 public class MultThread extends Thread {
     private Result result;

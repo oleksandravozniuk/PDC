@@ -1,4 +1,4 @@
-package com.company;
+package Striped;
 
 import java.util.Arrays;
 
