@@ -24,18 +24,40 @@ public class FoxThread extends Thread
     @Override
     public void run()
     {
-        int[][] multResult = new int[blockSize][blockSize];
         var curA = A;
         var curB = B;
         for(int i=0;i<blocksInRow;i++){
+            int[][] multResult = new int[blockSize][blockSize];
             for(int j = 0;j<blockSize;j++){
-                for (int k=0;k<blockSize;k++){
-                    multResult[j][k]=curA.matrix[j][k]*curB.matrix[j][k];
+                for(int h=0;h<blockSize;h++){
+                    var columnB = getColumn(curB.matrix, h);
+                    var sum = 0;
+                    for (int k=0;k<blockSize;k++){
+                        sum += curA.matrix[j][k]*columnB[k];
+                    }
+                    multResult[j][h] = sum;
                 }
+            }
+            try {
+                result.setResultMatrix(multResult,x,y,i);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
             curA=A.next;
             curB=B.next;
         }
-        result.setResultMatrix(multResult,x,y);
+
+    }
+
+    private int[] getColumn(int[][] matrix, int index){
+        int[] column = new int[matrix[0].length];
+        for(int i = 0;i<matrix[0].length;i++){
+            for(int j=0;j<matrix[0].length;j++){
+                if(j==index){
+                    column[i] = matrix[i][j];
+                }
+            }
+        }
+        return column;
     }
 }

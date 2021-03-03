@@ -2,20 +2,33 @@ package Fox;
 
 public class ResultFox {
     public int[][] resultMatrix;
+    public int[] iterations;
+    public int blocksInRow;
 
-    public ResultFox(int size){
+    public ResultFox(int size, int blocksInRow){
         resultMatrix = new int[size][size];
+        iterations = new int[blocksInRow];
+        this.blocksInRow = blocksInRow;
     }
 
-    public synchronized void setResultMatrix(int[][] blockResult, int x, int y){
-        for(int i=0;i<blockResult.length;i++){
-            for(int j=0;j<blockResult.length;j++){
-                resultMatrix[x][y++]+=blockResult[i][j];
+    public synchronized void setResultMatrix(int[][] blockResult, int x, int y, int iteration) throws InterruptedException {
+        while(checkIteration(iteration)){
+            try{
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        for (int[] ints : blockResult) {
+            int columnIndex = y;
+            for (int j = 0; j < blockResult.length; j++) {
+                resultMatrix[x][columnIndex++] += ints[j];
             }
             x++;
         }
+        iterations[iteration]++;
+        notify();
         //printMatrix();
-        System.out.println("mult value" + blockResult[0][0]);
     }
 
     public synchronized void printMatrix(){
@@ -26,5 +39,14 @@ public class ResultFox {
             System.out.print("\n");
         }
         System.out.println("\n");
+    }
+
+    private synchronized boolean checkIteration(int it){
+        for(int i=0;i<blocksInRow;i++){
+            if(i<it && iterations[i] < blocksInRow){
+                return true;
+            }
+        }
+        return false;
     }
 }
