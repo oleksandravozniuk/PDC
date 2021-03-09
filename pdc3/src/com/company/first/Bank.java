@@ -8,7 +8,6 @@ class Bank {
     public static final int NTEST = 10000;
     private AtomicIntegerArray accounts;
     private AtomicLong ntransacts = new AtomicLong(0);
-    private ReentrantLock lock = new ReentrantLock();
 
     public Bank(int n, int initialBalance){
         accounts = new AtomicIntegerArray(n);
@@ -27,32 +26,14 @@ class Bank {
 //    }
 
     public void transfer(int from, int to, int amount) throws InterruptedException{
-//        synchronized (this){
-//            accounts[from] -= amount;
-//            accounts[to] += amount;
-//            ntransacts++;
-//            if (ntransacts % NTEST == 0)
-//                test();
-//        }
-
-//        lock.lock();
-//        try {
-//            accounts[from] -= amount;
-//            accounts[to] += amount;
-//            ntransacts++;
-//            if (ntransacts % NTEST == 0)
-//                test();
-//        } finally {
-//            lock.unlock();
-//        }
 
             accounts.addAndGet(from,-amount);
             accounts.addAndGet(to,amount);
 
             ntransacts.incrementAndGet();
+
             if (ntransacts.get() % NTEST == 0)
                 test();
-
     }
 
     public void test(){

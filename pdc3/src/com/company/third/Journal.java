@@ -1,20 +1,24 @@
 package com.company.third;
 
+import java.util.ArrayList;
 import java.util.concurrent.ConcurrentMap;
 
 public class Journal {
-    private ConcurrentMap<Integer, Integer>[][] groupPages;
+    private ArrayList<Group> groups;
 
-    public Journal(ConcurrentMap<Integer, Integer>[][] groupPages){
-        this.groupPages = groupPages;
+    public Journal(ArrayList<Group> groups){
+        this.groups = groups;
     }
 
-    public void setMark(int weekNumber, int groupNumber, int studentId, int mark, int teacherId){
-        groupPages[weekNumber][groupNumber].put(studentId,mark);
-        print(studentId, teacherId, groupNumber, weekNumber);
+    public void setMark(int weekNumber, int groupId, int studentId, int mark){
+        var student = groups.stream().filter(x->x.getId()==groupId).findFirst().orElse(null).getStudentById(studentId);
+            student.setMark(mark,weekNumber);
     }
 
-    public void print(int studentId, int teacherId, int groupId, int weekNumber){
-        System.out.println("Week " + weekNumber + " Student " + studentId + " mark: " + groupPages[weekNumber][groupId].get(studentId) + " by teacher " + teacherId);
+    public synchronized void print(){
+        for(int i=0;i<groups.size();i++){
+            groups.get(i).print();
+        }
+        System.out.println();
     }
 }
