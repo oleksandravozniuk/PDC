@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-class Folder {
+public class Folder {
     private final List<Folder> subFolders;
     private final List<Document> documents;
 
@@ -22,7 +22,7 @@ class Folder {
         return this.documents;
     }
 
-    static Folder fromDirectory(File dir) throws IOException {
+    public static Folder fromDirectory(File dir) throws IOException {
         List<Document> documents = new LinkedList<>();
         List<Folder> subFolders = new LinkedList<>();
         for (File entry : dir.listFiles()) {

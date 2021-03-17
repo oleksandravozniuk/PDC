@@ -1,8 +1,11 @@
 package com.company.task4;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.RecursiveTask;
 
-class DocumentCountTask extends RecursiveTask<ITWords> {
+public class DocumentCountTask extends RecursiveTask<List<Double>> {
     private final Document document;
     private final WordCounter wordCounter = new WordCounter();
 
@@ -12,7 +15,7 @@ class DocumentCountTask extends RecursiveTask<ITWords> {
     }
 
     @Override
-    protected ITWords compute() {
-        return wordCounter.statDocCount(document);
+    protected List<Double> compute() {
+        return new ArrayList<>(Arrays.asList(wordCounter.statDocCount(document)));
     }
 }

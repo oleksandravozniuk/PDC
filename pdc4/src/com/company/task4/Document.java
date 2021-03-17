@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-class Document {
+public class Document {
     private final List<String> lines;
 
     Document(List<String> lines) {

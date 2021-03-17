@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9254959-7cf7-4a20-9482-c06d720e1763" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdc3/out/production/pdc3/com/company/first/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/pdc3/out/production/pdc3/com/company/first/Bank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdc3/src/com/company/first/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc3/src/com/company/first/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdc3/src/com/company/third/Journal.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc3/src/com/company/third/Journal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdc3/src/com/company/third/JournalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc3/src/com/company/third/JournalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc4/out/production/pdc4/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/pdc4/out/production/pdc4/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc4/out/production/pdc4/com/company/task2/JournalTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/pdc4/out/production/pdc4/com/company/task2/JournalTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc4/out/production/pdc4/com/company/task2/TeacherTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/pdc4/out/production/pdc4/com/company/task2/TeacherTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc4/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc4/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc4/src/com/company/task2/JournalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc4/src/com/company/task2/JournalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc4/src/com/company/task2/TeacherTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc4/src/com/company/task2/TeacherTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc4/src/com/company/task4/DocumentCountTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc4/src/com/company/task4/DocumentCountTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc4/src/com/company/task4/FolderSearchTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc4/src/com/company/task4/FolderSearchTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc4/src/com/company/task4/ITWords.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc4/src/com/company/task4/ITWords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc4/src/com/company/task4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc4/src/com/company/task4/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc4/src/com/company/task4/WordCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdc4/src/com/company/task4/WordCounter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +82,10 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
