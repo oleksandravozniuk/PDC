@@ -1,0 +1,2 @@
+﻿  blocking.cpp
+C:\Users\Oleksandra\Desktop\PDC\PDC\pdc6\blocking\blocking\blocking.cpp(8,10): fatal error C1083: Cannot open include file: 'mpi.h': No such file or directory
