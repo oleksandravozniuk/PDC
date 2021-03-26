@@ -19,10 +19,10 @@ public class Model {
     public ExperimentStatistics expStat;
 
     public Model(double timeModelling, int queueCapacity, int channelsCount, ExperimentStatistics expStat){
-        this.producer = new Producer(this,3,1);
+        this.producer = new Producer(this,1000,1);
         ArrayList<Consumer> consumers = new ArrayList<>();
         for(int i = 0; i<channelsCount;i++){
-            Consumer consumer = new Consumer(this,30,5,i);
+            Consumer consumer = new Consumer(this,2,1,i);
             consumers.add(consumer);
         }
         this.consumers = consumers;

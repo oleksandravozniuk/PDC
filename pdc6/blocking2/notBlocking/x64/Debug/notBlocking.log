@@ -1,3 +1,3 @@
 ﻿  Source.cpp
-C:\Users\Oleksandra\Desktop\PDC\PDC\pdc6\blocking2\notBlocking\Source.cpp(29,16): warning C4101: 'status': unreferenced local variable
-  notBlocking.vcxproj -> C:\Users\Oleksandra\Desktop\PDC\PDC\pdc6\blocking2\x64\Debug\notBlocking.exe
+C:\Users\Oleksandra\Desktop\PDC\PDC\pdc6\blocking2\notBlocking\Source.cpp(97,30): error C2109: subscript requires array or pointer type
+C:\Users\Oleksandra\Desktop\PDC\PDC\pdc6\blocking2\notBlocking\Source.cpp(97,37): error C3078: array size must be specified in new expressions without an initializer

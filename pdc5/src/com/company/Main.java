@@ -11,13 +11,13 @@ public class Main {
 
         ExecutorService pool = Executors.newFixedThreadPool(numberOfExperiments);
         for (int i=0;i<numberOfExperiments;i++){
-            Model model = new Model(5000,5,6, expStat);
+            Model model = new Model(5000,5,2, expStat);
             StatThread experimentStatistics = new StatThread(model);
             pool.execute(new Simulator(model));
             experimentStatistics.start();
         }
         pool.shutdown();
-        Thread.sleep(6000);
+        Thread.sleep(15000);
         System.out.println("Experiment result, number of runs = " + numberOfExperiments);
         System.out.println("Average queue: " + expStat.sumAverageQueue/numberOfExperiments);
         System.out.println("Average failure probability: " + expStat.sumFailureProbability/numberOfExperiments);

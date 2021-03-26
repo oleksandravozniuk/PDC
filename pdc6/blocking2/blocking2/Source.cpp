@@ -7,9 +7,9 @@
 #include "mpi.h" 
 #include <stdio.h> 
 #include <stdlib.h>
-#define NRA 62 		     /* number of rows in matrix A */
-#define NCA 15		     /* number of columns in matrix A */ 
-#define NCB 7 		     /* number of columns in matrix B */ 
+#define NRA 50 		     /* number of rows in matrix A */
+#define NCA 50		     /* number of columns in matrix A */ 
+#define NCB 50 		     /* number of columns in matrix B */ 
 #define MASTER 0 	     /* taskid of first task */
 #define FROM_MASTER 1 /* setting a message type */ 
 #define FROM_WORKER 2 /* setting a message type */
@@ -81,12 +81,12 @@ int main(int argc, char* argv[]) {
     }
     /******** worker task *****************/
     else { /* if (taskid > MASTER) */
-        MPI_Recv(&offset, 1, MPI_INT, MASTER, FROM_MASTER, MPI_COMM_WORLD,
+        MPI_Recv(&offset, 1, MPI_INT, MASTER, MPI_ANY_TAG, MPI_COMM_WORLD,
             &status);
-        MPI_Recv(&rows, 1, MPI_INT, MASTER, FROM_MASTER, MPI_COMM_WORLD, &status);
-        MPI_Recv(&a, rows * NCA, MPI_DOUBLE, MASTER, FROM_MASTER, MPI_COMM_WORLD,
+        MPI_Recv(&rows, 1, MPI_INT, MASTER, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+        MPI_Recv(&a, rows * NCA, MPI_DOUBLE, MASTER, MPI_ANY_TAG, MPI_COMM_WORLD,
             &status);
-        MPI_Recv(&b, NCA * NCB, MPI_DOUBLE, MASTER, FROM_MASTER, MPI_COMM_WORLD,
+        MPI_Recv(&b, NCA * NCB, MPI_DOUBLE, MASTER, MPI_ANY_TAG, MPI_COMM_WORLD,
             &status);
         for (k = 0; k < NCB; k++)
             for (i = 0; i < rows; i++) {
